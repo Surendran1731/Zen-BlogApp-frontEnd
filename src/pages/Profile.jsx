@@ -21,7 +21,7 @@ const Profile = () => {
 
 const fetchProfile=async ()=>{
   try{
-     const res=await axios.get(URL+"/api/users/"+user._id,{withCredentials:true})
+     const res=await axios.get(URL+"/api/users/"+user._id)
      setUsername(res.data.username)
      setEmail(res.data.email)
      setPassword(res.data.password)
@@ -61,7 +61,7 @@ const handleUserDelete=async()=>{
 // console.log(user)
 const fetchUserPosts=async ()=>{
   try{
-    const res=await axios.get(URL+"/api/posts/user/"+user._id,{withCredentials:true})
+    const res=await axios.get(URL+"/api/posts/user/"+user._id)
     // console.log(res.data)
     setPosts(res.data)
 

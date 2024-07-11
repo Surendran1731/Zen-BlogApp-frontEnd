@@ -24,7 +24,7 @@ const PostDetails = () => {
 
   const fetchPost=async()=>{
     try{
-      const res= await axios.get(URL+"/api/posts/"+postId,{withCredentials:true})
+      const res= await axios.get(URL+"/api/posts/"+postId)
       // console.log(res.data)
       setPost(res.data)
     }
@@ -55,7 +55,7 @@ const PostDetails = () => {
   const fetchPostComments=async()=>{
     setLoader(true)
     try{
-      const res=await axios.get(URL+"/api/comments/post/"+postId,{withCredentials:true})
+      const res=await axios.get(URL+"/api/comments/post/"+postId)
       setComments(res.data)
       setLoader(false)
 

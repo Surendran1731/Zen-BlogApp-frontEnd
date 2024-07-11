@@ -22,14 +22,7 @@ const Home = () => {
   const fetchPosts=async()=>{
     setLoader(true)
     try{
-      const res=await axios.get(URL+"/api/posts/"+search,
-        {
-          headers:{
-         "Content-Type":"application/json"
-        },
-      withCredentials:true
-      }
-      )
+      const res=await axios.get(URL+"/api/posts/"+search)
       // console.log(res.data)
       setPosts(res.data)
       if(res.data.length===0){
