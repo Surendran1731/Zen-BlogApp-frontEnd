@@ -61,7 +61,14 @@ const handleUserDelete=async()=>{
 // console.log(user)
 const fetchUserPosts=async ()=>{
   try{
-    const res=await axios.get(URL+"/api/posts/user/"+user._id)
+    const res=await axios.get(URL+"/api/posts/user/"+user._id,
+      {
+        headers:{
+       "Content-Type":"application/json"
+      },
+    withCredentials:true
+    }
+    )
     // console.log(res.data)
     setPosts(res.data)
 

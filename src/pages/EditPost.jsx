@@ -21,7 +21,14 @@ const EditPost = () => {
 
     const fetchPost=async()=>{
       try{
-        const res=await axios.get(URL+"/api/posts/"+postId)
+        const res=await axios.get(URL+"/api/posts/"+postId,
+          {
+            headers:{
+           "Content-Type":"application/json"
+          },
+        withCredentials:true
+        }
+        )
         setTitle(res.data.title)
         setDesc(res.data.desc)
         setFile(res.data.photo)
